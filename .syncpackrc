@@ -1,0 +1,22 @@
+{
+  "versionGroups": [
+    {
+      "label": "Use workspace protocol when local packages",
+      "dependencies": ["$LOCAL"],
+      "dependencyTypes": ["dev","prod"],
+      "pinVersion": "workspace:*"
+    },
+    {
+      "label": "Use eslint when local packages",
+      "dependencies": ["eslint"],
+      "dependencyTypes": ["dev"],
+      "pinVersion": "9.9.1"
+    },
+    {
+      "label": "Use typescript when local packages",
+      "dependencies": ["typescript"],
+      "dependencyTypes": ["dev"],
+      "pinVersion": "5.5.4"
+    },
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@blog/tsconfig",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Common tsconfig lib",
+  "author": "Seventhse <season.sevent@icloud.com> (https://github.com/seventhse)",
+  "license": "MIT"
+}

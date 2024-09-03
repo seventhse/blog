@@ -1,0 +1,35 @@
+{
+  "name": "blog-monorepo",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@9.9.0",
+  "description": "A blog site monorepo.",
+  "author": "Seventhse <season.sevent@icloud.com> (https://github.com/seventhse)",
+  "license": "AGPL-3.0",
+  "repository": "https://github.com/seventhse/blog",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "pack:list": "syncpack list",
+    "pack:fix": "syncpack fix-mismatches",
+    "lint:fix": "turbo lint:fix",
+    "eslint:fix": "eslint . --fix",
+    "postinstall": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@blog/eslint-config": "workspace:*",
+    "eslint": "9.9.1",
+    "lint-staged": "^15.2.10",
+    "simple-git-hooks": "^2.11.1",
+    "syncpack": "^13.0.0",
+    "turbo": "^2.1.1",
+    "typescript": "5.5.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": ["pnpm eslint:fix","pnpm lint:fix --","pnpm pack:fix"]
+  }
+}

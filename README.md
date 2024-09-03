@@ -1,2 +1,2 @@
-# blog
+# Blog app
 Blog site app.
