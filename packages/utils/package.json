@@ -1,0 +1,36 @@
+{
+  "name": "@seventhse/utils",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Common util library.",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "keywords": [
+    "utils"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "author": "Seventhse <season.sevent@icloud.com> (https://github.com/seventhse)",
+  "license": "MIT",
+  "devDependencies": {
+    "@blog/eslint-config": "workspace:*",
+    "@blog/tsconfig": "workspace:*",
+    "typescript": "5.5.4",
+    "vite": "5.4.3",
+    "vite-plugin-dts": "^4.1.0",
+    "vitest": "2.0.5"
+  }
+}
