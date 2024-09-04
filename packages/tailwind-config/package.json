@@ -3,10 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    ".": "./tailwind.config.ts"
-  },
-  "devDependencies": {
-    "@blog/tsconfig": "workspace:*",
-    "tailwindcss": "^3.4.10"
+    ".": "./tailwind.config.js"
   }
 }

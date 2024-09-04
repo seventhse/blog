@@ -11,6 +11,8 @@
     "node": ">=20.0.0"
   },
   "scripts": {
+    "storybook:dev": "turbo @seventhse/ui#storybook",
+    "storybook:build": "turbo @seventhse/ui#build-storybook",
     "dev": "turbo dev",
     "build": "turbo build",
     "pack:list": "syncpack list",

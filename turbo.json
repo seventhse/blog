@@ -6,13 +6,26 @@
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "dev": {
-      "dependsOn": ["^dev"],
       "persistent": true,
       "cache": false
     },
     "lint:fix": {
       "cache": true,
       "persistent": false
+    },
+    "@seventhse/utils#build": {
+      "persistent": false,
+      "cache": true
+    },
+    "@seventhse/ui#storybook": {
+      "dependsOn": [],
+      "persistent": true,
+      "cache": false
+    },
+    "@seventhse/ui#build-storybook": {
+      "dependsOn": ["@seventhse/utils#build"],
+      "persistent": false,
+      "cache": false
     }
   }
 }
