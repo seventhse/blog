@@ -11,6 +11,8 @@
     "node": ">=20.0.0"
   },
   "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
     "pack:list": "syncpack list",
     "pack:fix": "syncpack fix-mismatches",
     "lint:fix": "turbo lint:fix",
@@ -20,12 +22,14 @@
   },
   "devDependencies": {
     "@blog/eslint-config": "workspace:*",
+    "@types/node": "^22.5.3",
     "eslint": "9.9.1",
     "lint-staged": "^15.2.10",
     "simple-git-hooks": "^2.11.1",
     "syncpack": "^13.0.0",
     "turbo": "^2.1.1",
     "typescript": "5.5.4",
+    "vite": "5.4.3",
     "vitest": "2.0.5"
   },
   "simple-git-hooks": {

@@ -24,5 +24,11 @@
       "dependencyTypes": ["dev"],
       "pinVersion": "2.0.5"
     },
+    {
+      "label": "Use unbuild when local packages",
+      "dependencies": ["vite"],
+      "dependencyTypes": ["dev"],
+      "pinVersion": "5.4.3"
+    },
   ]
 }
