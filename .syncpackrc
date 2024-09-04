@@ -18,5 +18,11 @@
       "dependencyTypes": ["dev"],
       "pinVersion": "5.5.4"
     },
+    {
+      "label": "Use vitest when local packages",
+      "dependencies": ["vitest"],
+      "dependencyTypes": ["dev"],
+      "pinVersion": "2.0.5"
+    },
   ]
 }
