@@ -13,6 +13,10 @@
       "cache": true,
       "persistent": false
     },
+    "test": {
+      "cache": true,
+      "persistent": false
+    },
     "@seventhse/utils#build": {
       "persistent": false,
       "cache": true

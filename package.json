@@ -18,7 +18,7 @@
     "pack:list": "syncpack list",
     "pack:fix": "syncpack fix-mismatches",
     "lint:fix": "turbo lint:fix",
-    "test": "vitest",
+    "pack:test": "turbo test",
     "eslint:fix": "eslint . --fix",
     "postinstall": "simple-git-hooks"
   },
@@ -41,10 +41,8 @@
     "*": [
       "pnpm eslint:fix",
       "pnpm lint:fix --",
-      "pnpm pack:fix"
-    ],
-    "*.test.ts": [
-      "vitest related --run"
+      "pnpm pack:fix",
+      "pnpm pack:test --"
     ]
   }
 }

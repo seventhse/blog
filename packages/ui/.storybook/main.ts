@@ -16,7 +16,7 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@chromatic-com/storybook'),
     getAbsolutePath('@storybook/addon-interactions'),
-    '@storybook/addon-themes'
+    '@storybook/addon-themes',
   ],
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),

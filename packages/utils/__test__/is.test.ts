@@ -84,6 +84,7 @@ describe('type Checking Functions', () => {
   })
 
   it('should correctly identify errors', () => {
+    // eslint-disable-next-line unicorn/error-message
     expect(isError(new Error())).toBe(true)
     expect(isError({})).toBe(false)
   })
