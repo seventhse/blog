@@ -21,7 +21,7 @@
     "package.json"
   ],
   "scripts": {
-    "test": "vitest related --run",
+    "test": "vitest --run",
     "test:watch": "vitest",
     "build": "vite build",
     "dev": "vite build --watch",

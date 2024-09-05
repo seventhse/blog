@@ -15,7 +15,8 @@
     },
     "test": {
       "cache": true,
-      "persistent": false
+      "persistent": false,
+      "inputs": ["__test__/**/*.ts", "**/*.test.*"]
     },
     "@seventhse/utils#build": {
       "persistent": false,

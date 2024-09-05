@@ -18,7 +18,7 @@
     "pack:list": "syncpack list",
     "pack:fix": "syncpack fix-mismatches",
     "lint:fix": "turbo lint:fix",
-    "pack:test": "turbo test",
+    "pack:test": "turbo test --",
     "eslint:fix": "eslint . --fix",
     "postinstall": "simple-git-hooks"
   },
@@ -42,7 +42,7 @@
       "pnpm eslint:fix",
       "pnpm lint:fix --",
       "pnpm pack:fix",
-      "pnpm pack:test --"
+      "pnpm pack:test"
     ]
   }
 }
