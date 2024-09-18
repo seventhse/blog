@@ -1,5 +1,9 @@
 {
   "extends": "@blog/tsconfig/react-library.json",
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": true
+  },
   "references": [
     {
       "path": "./tsconfig.build.json"

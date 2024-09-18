@@ -1,0 +1,10 @@
+{
+  "extends": "@blog/tsconfig/next.json",
+  "compilerOptions": {},
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    ".next/types/**/*.ts",
+    "next-env.d.ts"
+  ]
+}

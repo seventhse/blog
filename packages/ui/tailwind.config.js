@@ -1,8 +1,6 @@
 import sharedConfig from '@blog/tailwind-config'
 
-const config = {
+export default {
   content: ['./src/**/*.tsx'],
   presets: [sharedConfig],
 }
-
-export default config

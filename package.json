@@ -42,7 +42,7 @@
       "pnpm eslint:fix",
       "pnpm lint:fix --",
       "pnpm pack:fix",
-      "pnpm pack:test"
+      "pnpm pack:test '--' 'true'"
     ]
   }
 }

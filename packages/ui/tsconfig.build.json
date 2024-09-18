@@ -1,7 +1,10 @@
 {
   "extends": "@blog/tsconfig/base.json",
   "compilerOptions": {
-    "module": "ESNext"
+    "composite": true,
+    "module": "ESNext",
+    "allowImportingTsExtensions": false,
+    "noEmit": false
   },
   "include": [
     "vite.config.ts"

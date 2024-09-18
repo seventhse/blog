@@ -4,6 +4,8 @@ const config = {
   theme: {
     extend: {
       backgroundImage: {
+        'page': 'linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)',
+        'dark-page': 'linear-gradient(120deg, #2c3e50 0%, #34495e 100%)',
       },
     },
   },
