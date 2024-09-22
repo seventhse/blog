@@ -6,9 +6,8 @@ import { Header } from './header.tsx'
 import { Footer } from './footer.tsx'
 
 const menus = [
-  { name: 'Home', href: '/' },
+  { name: 'Blogs', href: '/blogs' },
   { name: 'Articles', href: '/articles' },
-  { name: 'About', href: '/about' },
 ]
 
 function RootLayout({ children }: PropsWithChildren) {
@@ -16,7 +15,7 @@ function RootLayout({ children }: PropsWithChildren) {
   return (
     <>
       <JotaiProvider />
-      <div className="min-h-screen flex flex-col gap-y-3">
+      <div className="w-screen min-h-screen flex flex-col gap-y-3 mx-auto max-w-[1024px]">
         <Header menus={menus} avatar={avatar!} />
         <main className="container mx-auto flex-auto">{children}</main>
         <Footer />

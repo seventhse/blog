@@ -7,7 +7,7 @@ export function AboutMe() {
 
   return (
     <section className="sm:mt-[calc(100vh/4)] mt-[120px] flex items-center justify-center">
-      <div className="w-full max-w-[1024px] flex flex-col sm:flex-row items-center sm:justify-between gap-y-6 gap-x-0 px-0 sm:px-12 md:px-24 lg:px-48">
+      <div className="w-full flex flex-col sm:flex-row items-center sm:justify-between gap-y-6 gap-x-0">
         <div className="order-2 sm:order-1">
           <h1 className="text-xl sm:text-2xl font-mono leading-normal">
             <p>

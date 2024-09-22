@@ -5,6 +5,7 @@ import { cva } from 'class-variance-authority'
 import { useTheme } from 'next-themes'
 import { Monitor, Moon, Sun } from 'lucide-react'
 import { useMemo, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { cn } from '../utils'
 
 const themeIconVariants = cva('cursor-pointer', {
@@ -76,17 +77,20 @@ function ThemeChangerInner() {
 
   return (
     <>
-      <div
-        className={cn ('fixed top-0 left-0 w-screen h-screen z-50 hidden animate-slideDown', visibleMask && 'block')}
-        style={animateStyle}
-        onAnimationEnd={animationEnd}
-      />
+      {createPortal (
+        <div
+          className={cn ('fixed top-0 left-0 w-screen h-screen z-50 hidden animate-slideDown', visibleMask && 'block')}
+          style={animateStyle}
+          onAnimationEnd={animationEnd}
+        />,
+        document.body,
+      )}
       {
         visible && (
           <div
             className="fixed z-10 top-0 left-0 w-screen h-screen"
             onClick={() => {
-              setVisible(false)
+              setVisible (false)
             }}
           />
         )
@@ -148,7 +152,7 @@ export function ThemeChanger() {
   }, [mounted])
 
   return (
-    <div className="w-[36px] flex items-center justify-end">
+    <div className="w-[36px] flex items-center justify-end relative">
       {innerNode}
     </div>
   )

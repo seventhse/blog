@@ -16,7 +16,7 @@ interface HeaderProps {
 
 export function Header({ menus, avatar }: HeaderProps) {
   return (
-    <header className="p-3 sticky top-0 backdrop-blur-sm bg-white/30 dark:bg-transparent dark:shadow">
+    <header className="p-3 sticky rounded-xl top-0 backdrop-blur-sm bg-white/30 dark:bg-transparent dark:shadow">
       <nav className="container mx-auto flex items-center justify-between">
         <div className="min-w-[36px]">
           <Link href="/">

@@ -1,0 +1,13 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: '{apps|packages}/*.{js,ts,jsx,tsx,json}'
+      exclude: '*.test.*'
+      run: pnpm lint:fix --fix
+    test:
+      glob: '*.test.*'
+      run: pnpm pack:test
+    syncpack:
+      glob: package.json
+      run: pnpm pack:fix

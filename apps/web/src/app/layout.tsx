@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
-      <body className="w-full min-h-screen bg-page">
+      <body className="w-screen min-h-screen bg-page">
         <ThemeProvider attribute="class">
           <Layout>
             {children}
