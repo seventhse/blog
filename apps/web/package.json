@@ -1,5 +1,6 @@
 {
   "name": "blog-web",
+  "type": "module",
   "version": "0.0.1",
   "author": "Seventhse <season.sevent@icloud.com> (https://github.com/seventhse)",
   "license": "MIT",
