@@ -7,7 +7,7 @@ import { Footer } from './footer.tsx'
 
 const menus = [
   { name: 'Home', href: '/' },
-  { name: 'Posts', href: '/posts' },
+  { name: 'Articles', href: '/articles' },
   { name: 'About', href: '/about' },
 ]
 
