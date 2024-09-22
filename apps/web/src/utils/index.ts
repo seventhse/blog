@@ -6,3 +6,5 @@ export type CnInputs = ClassValue | ClassValue[]
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+
+export * from './env'

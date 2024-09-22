@@ -5,6 +5,7 @@
 @layer base {
   :root{
     --primary: #69D1A2;
+    --primay-forgend: #fff;
     --bg-page: linear-gradient(180deg, #fdfbfb 0%, #ebedee 100%);
     --bg-block: #fdfbfb;
     --border-color: #fdfbfb;

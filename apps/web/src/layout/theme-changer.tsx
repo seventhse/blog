@@ -37,6 +37,7 @@ const themeIcons = [
 function ThemeChangerInner() {
   const tempMode = useRef('')
   const [visible, setVisible] = useState(false)
+  const [visibleMask, setVisibleMask] = useState(false)
 
   const { theme, systemTheme, setTheme } = useTheme()
 
@@ -54,41 +55,78 @@ function ThemeChangerInner() {
     }
   }, [isDark])
 
+  const ActiveIcon = useMemo(() => {
+    return themeIcons.find(item => item.name === theme)!.Icon
+  }, [theme])
+
   const changeTheme = (mode: string) => {
+    setVisible(false)
     if (mode === themeMode || (mode === 'system' && systemTheme === themeMode)) {
       setTheme(mode)
       return
     }
-    setVisible(true)
+    setVisibleMask(true)
     tempMode.current = mode
   }
 
   const animationEnd = () => {
     setTheme(tempMode.current)
-    setVisible(false)
+    setVisibleMask(false)
   }
 
   return (
     <>
       <div
-        className={cn ('fixed top-0 left-0 w-screen h-screen z-50 hidden animate-slideDown', visible && 'block')}
+        className={cn ('fixed top-0 left-0 w-screen h-screen z-50 hidden animate-slideDown', visibleMask && 'block')}
         style={animateStyle}
         onAnimationEnd={animationEnd}
       />
-      <div className="shadow rounded-xl p-1 bg-block">
-        <div className="flex items-center gap-x-3 p-2 rounded-xl">
+      {
+        visible && (
+          <div
+            className="fixed z-10 top-0 left-0 w-screen h-screen"
+            onClick={() => {
+              setVisible(false)
+            }}
+          />
+        )
+      }
+      <div className="relative shadow rounded-xl bg-block">
+        <div
+          className="cursor-pointer p-2 rounded-xl"
+          onClick={() => {
+            setVisible (pre => !pre)
+          }}
+        >
+          <span className={themeIconVariants ({ status: 'active' })}>
+            <ActiveIcon size={16} />
+          </span>
+        </div>
+
+        <div
+          className={
+            cn(
+              'absolute z-20 flex-col gap-y-3 top-[42px] left-0 bg-page rounded-xl p-2',
+              visible
+                ? 'flex'
+                : 'hidden',
+            )
+          }
+        >
           {
-            themeIcons.map((item) => {
+            themeIcons.map ((item) => {
               const Icon = item.Icon
               return (
                 <span
                   key={item.name}
                   className={themeIconVariants ({
-                    status: theme === item.name ? 'active' : 'normal',
+                    status: theme === item.name
+                      ? 'active'
+                      : 'normal',
                   })}
                   title={item.name}
                 >
-                  <Icon size={16} onClick={() => changeTheme(item.name)} />
+                  <Icon size={16} onClick={() => changeTheme (item.name)} />
                 </span>
               )
             })
@@ -110,7 +148,7 @@ export function ThemeChanger() {
   }, [mounted])
 
   return (
-    <div className="w-[100px] flex items-center justify-end">
+    <div className="w-[36px] flex items-center justify-end">
       {innerNode}
     </div>
   )

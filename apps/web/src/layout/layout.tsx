@@ -1,6 +1,7 @@
 import 'jotai-devtools/styles.css'
 import type { PropsWithChildren } from 'react'
 import { JotaiProvider } from '../providers/jotai-provider.tsx'
+import { getEnv } from '../utils'
 import { Header } from './header.tsx'
 import { Footer } from './footer.tsx'
 
@@ -11,12 +12,13 @@ const menus = [
 ]
 
 function RootLayout({ children }: PropsWithChildren) {
+  const avatar = getEnv('NEXT_PUBLIC_AVATAR')
   return (
     <>
       <JotaiProvider />
       <div className="min-h-screen flex flex-col gap-y-3">
-        <Header menus={menus} />
-        <main className="container mx-auto min-h-[1200px]">{children}</main>
+        <Header menus={menus} avatar={avatar!} />
+        <main className="container mx-auto flex-auto">{children}</main>
         <Footer />
       </div>
     </>

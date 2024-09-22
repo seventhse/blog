@@ -9,15 +9,20 @@ export type Menus = Array<{
   href: string
 }>
 
-export function Header({ menus }: { menus: Menus }) {
+interface HeaderProps {
+  menus: Menus
+  avatar: string
+}
+
+export function Header({ menus, avatar }: HeaderProps) {
   return (
     <header className="p-3 sticky top-0 backdrop-blur-sm bg-white/30 dark:bg-transparent dark:shadow">
-      <nav className="container mx-auto flex items-center">
-        <div className="w-[100px]">
+      <nav className="container mx-auto flex items-center justify-between">
+        <div className="min-w-[36px]">
           <Link href="/">
             <img
               className="shadow-lg rounded-[10px] size-[36px]"
-              src="https://avatars.githubusercontent.com/u/143956650?s=40&v=4"
+              src={avatar}
               alt="avatar"
             />
           </Link>

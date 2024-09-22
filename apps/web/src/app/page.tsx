@@ -1,3 +1,9 @@
+import { AboutMe } from '../components/about-me.tsx'
+
 export default function Page() {
-  return <h1 className="text-xl">Hello, Next.js!</h1>
+  return (
+    <div className="size-full">
+      <AboutMe />
+    </div>
+  )
 }
