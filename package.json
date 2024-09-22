@@ -18,7 +18,8 @@
     "pack:fix": "syncpack fix-mismatches",
     "lint:fix": "turbo lint:fix",
     "pack:test": "turbo test --",
-    "eslint:fix": "eslint . --fix"
+    "eslint:fix": "eslint . --fix",
+    "postinstall": "pnpm lefthook install"
   },
   "devDependencies": {
     "@blog/eslint-config": "workspace:*",
