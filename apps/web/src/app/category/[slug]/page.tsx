@@ -3,7 +3,10 @@ import { ArticleList } from '@/components/article-list.tsx'
 import { CategoryTab } from '@/components/category-tab.tsx'
 
 export async function generateStaticParams() {
-  return await getArticleCategory()
+  const categoryes = await getArticleCategory()
+  return categoryes.map(item => ({
+    slug: item.value,
+  }))
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
