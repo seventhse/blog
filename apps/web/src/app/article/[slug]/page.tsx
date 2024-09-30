@@ -1,4 +1,4 @@
-import { getArticles } from '@/api/article.ts'
+import { getArticleDetail, getArticles } from '@/api/article.ts'
 
 export async function generateStaticParams() {
   const categoryes = await getArticles()
@@ -7,18 +7,18 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function ArticlePage({ params }: { params: { slug: string } }) {
+export default async function ArticlePage({ params }: { params: { slug: string } }) {
+  const article = await getArticleDetail(params.slug)
   return (
-    <article className="container-px">
-      <header className="mt-6">
-        <h3>
-          &lg;
-          {params.slug}
-        </h3>
-      </header>
-      <main>
-        article page
-      </main>
-    </article>
+    <div className="container py-12 px-3 lg:px-0 mx-auto">
+      {/* <header className="sticky top-[80px] border-b-primary border-b"> */}
+      {/*  <h3 className="text-xl"> */}
+      {/*    {article?.title} */}
+      {/*  </h3> */}
+      {/* </header> */}
+      <article className="size-full prose lg:prose-lg dark:prose-invert">
+        <div dangerouslySetInnerHTML={{ __html: article?.content || '' }} />
+      </article>
+    </div>
   )
 }

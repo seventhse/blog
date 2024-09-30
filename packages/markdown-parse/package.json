@@ -9,15 +9,19 @@
     "markdown"
   ],
   "main": "src/index.ts",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "docusaurus-remark-plugin-tab-blocks": "^3.1.0",
     "rehype-stringify": "^10.0.1",
     "remark-extract-frontmatter": "^3.2.0",
     "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.1",
     "unified": "^11.0.5",

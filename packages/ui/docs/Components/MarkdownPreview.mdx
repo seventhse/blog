@@ -1,0 +1,104 @@
+import {MarkdownPreview} from "../../src"
+
+# Markdown Preview
+
+<MarkdownPreview content='
+  <div class="w-full"><h1>Test article two</h1>
+<blockquote>
+<p>2024-09-22 This is a test article and md file format.</p>
+</blockquote>
+<h1>Markdown Syntax Reference</h1>
+<h2>Headers</h2>
+<h1>H1 Header</h1>
+<h2>H2 Header</h2>
+<h3>H3 Header</h3>
+<h4>H4 Header</h4>
+<h5>H5 Header</h5>
+<h6>H6 Header</h6>
+<hr>
+<h2>Emphasis</h2>
+<p><em>Italic</em> or <em>Italic</em>
+<strong>Bold</strong> or <strong>Bold</strong>
+<em><strong>Bold and Italic</strong></em> or <em><strong>Bold and Italic</strong></em></p>
+<hr>
+<h2>Links</h2>
+<p><a href="https://example.com">Link text</a></p>
+<hr>
+<h2>Images</h2>
+<p><img src="https://example.com/image.jpg" alt="Alt text"></p>
+<hr>
+<h2>Lists</h2>
+<h3>Unordered List</h3>
+<ul>
+<li>Item 1</li>
+<li>Item 2
+<ul>
+<li>Sub-item 1</li>
+<li>Sub-item 2</li>
+</ul>
+</li>
+<li>Item 3</li>
+</ul>
+<h3>Ordered List</h3>
+<ol>
+<li>First item</li>
+<li>Second item
+<ol>
+<li>Sub-item 1</li>
+<li>Sub-item 2</li>
+</ol>
+</li>
+<li>Third item</li>
+</ol>
+<hr>
+<h2>Blockquotes</h2>
+<blockquote>
+<p>"This is a blockquote."</p>
+<p>"Multiline blockquote text."</p>
+</blockquote>
+<hr>
+<h2>Inline Code</h2>
+<p>Here is some `inline code`.</p>
+<hr>
+<h2>Code Blocks</h2>
+<p>```javascript
+function example() {
+console.log("Hello, world!");
+}
+```</p>
+<hr>
+<h2>Horizontal Rule</h2>
+<p>Insert a horizontal rule using three hyphens:</p>
+<hr>
+<hr>
+<h2>Tables</h2>
+<p>| Header 1   | Header 2   | Header 3   |
+|------------|------------|------------|
+| Row 1 Col 1| Row 1 Col 2| Row 1 Col 3|
+| Row 2 Col 1| Row 2 Col 2| Row 2 Col 3|</p>
+<hr>
+<h2>Task Lists</h2>
+<ul>
+<li>[ ] Task not complete</li>
+<li>[x] Task complete</li>
+</ul>
+<hr>
+<h2>Footnotes</h2>
+<p>Here is a footnote reference.[^1]</p>
+<p>[^1]: This is the footnote content.</p>
+<hr>
+<h2>Strikethrough</h2>
+<p>~~This text is crossed out.~~</p>
+<hr>
+<h2>Escape Characters</h2>
+<p>Use a backslash (\) to escape special characters, like \* or \_.</p>
+<hr>
+<h2>Definition Lists</h2>
+<p>First Term
+: This is the definition of the first term.</p>
+<p>Second Term
+: This is the definition of the second term.</p>
+<hr>
+<h2>HTML in Markdown</h2>
+&lt;p&gt;This is an HTML paragraph in a Markdown document.&lt;/p&gt;</div>
+'/>

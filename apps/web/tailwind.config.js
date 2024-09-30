@@ -1,4 +1,5 @@
 import sharedConfig from '@blog/tailwind-config'
+import typography from '@tailwindcss/typography'
 
 const config = {
   content: [
@@ -33,6 +34,9 @@ const config = {
       },
     },
   },
+  plugins: [
+    typography,
+  ],
 }
 
 export default config

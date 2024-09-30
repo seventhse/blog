@@ -6,6 +6,8 @@ import { unified } from 'unified'
 import extract from 'remark-extract-frontmatter'
 import frontmatter from 'remark-frontmatter'
 import { parse as yamlParse } from 'yaml'
+import remarkGfm from 'remark-gfm'
+import tabBlocks from 'docusaurus-remark-plugin-tab-blocks'
 import remarkReadtime from './plugins/remark-readtime.ts'
 
 let processor: Processor<any, any, any, any, any> | null = null
@@ -14,8 +16,10 @@ export function createProcessor() {
   if (!processor) {
     processor = unified()
       .use(remarkParse)
+      .use(tabBlocks)
       .use(frontmatter, ['yaml'])
       .use(extract, { yaml: yamlParse })
+      .use(remarkGfm)
       .use(remarkRehype, { allowDangerousHtml: true })
       .use(rehypeStringify)
       .use(remarkReadtime, {
