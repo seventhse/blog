@@ -23,13 +23,19 @@ export interface IArticleCategory {
 const __filename = fileURLToPath(import.meta.url) // Get full file path
 export const __dirname = path.dirname(__filename)
 
-const rootPath = path.resolve(__dirname, '../../blogs')
+const ROOT_PATH = path.resolve(__dirname, '../../blogs')
+
+const DEFAULT_CATEGORY = {
+  label: 'All',
+  value: 'all',
+  href: `/category/all`,
+}
 
 export async function getArticles(): Promise<IArticleItem[]> {
-  const res = await fs.readdir(rootPath)
+  const res = await fs.readdir(ROOT_PATH)
 
   return await Promise.all(res.map(async (item) => {
-    const filePath = path.resolve(rootPath, item)
+    const filePath = path.resolve(ROOT_PATH, item)
     const stat = await fs.stat(filePath)
     if (!stat.isFile()) {
       return null
@@ -41,7 +47,7 @@ export async function getArticles(): Promise<IArticleItem[]> {
       ...parsed,
       ...parsed.metadata,
       category: parsed.metadata.category || 'unkown',
-      href: parsed.metadata.slug ? `/blogs/${parsed.metadata.slug}` : `/blogs/${parsed.metadata.title}`,
+      href: parsed.metadata.slug ? `/article/${parsed.metadata.slug}` : `/article/${parsed.metadata.title}`,
     }
   }).filter(item => item)) as unknown as Promise<IArticleItem[]>
 }
@@ -49,12 +55,6 @@ export async function getArticles(): Promise<IArticleItem[]> {
 export async function getFixedArticles(): Promise<IArticleItem[]> {
   const articles = await getArticles()
   return articles.filter(article => article.fixed)
-}
-
-const DEFAULT_CATEGORY = {
-  label: 'All',
-  value: 'all',
-  href: `/category/all`,
 }
 
 export async function getArticleCategory(): Promise<IArticleCategory[]> {

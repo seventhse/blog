@@ -1,3 +1,12 @@
+import { getArticles } from '@/api/article.ts'
+
+export async function generateStaticParams() {
+  const categoryes = await getArticles()
+  return categoryes.map(item => ({
+    slug: item.slug || item.title,
+  }))
+}
+
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   return (
     <article className="container-px">
