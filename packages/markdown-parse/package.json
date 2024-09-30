@@ -1,0 +1,30 @@
+{
+  "name": "@blog/markdown-parse",
+  "version": "0.0.1",
+  "description": "markdown parse lib",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [
+    "markdown"
+  ],
+  "files": ["src"],
+  "author": "Seventhse <season.sevent@icloud.com> (https://github.com/seventhse)",
+  "license": "MIT",
+  "dependencies": {
+    "rehype-stringify": "^10.0.1",
+    "remark-extract-frontmatter": "^3.2.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.1",
+    "unified": "^11.0.5",
+    "yaml": "^2.5.1"
+  },
+  "devDependencies": {
+    "@blog/eslint-config": "workspace:^",
+    "@blog/tsconfig": "workspace:^"
+  }
+}
