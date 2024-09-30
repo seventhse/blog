@@ -1,6 +1,10 @@
 {
   "extends": "@blog/tsconfig/next.json",
-  "compilerOptions": {},
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
   "include": [
     "./src/**/*.ts",
     "./src/**/*.tsx",

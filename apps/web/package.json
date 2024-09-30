@@ -17,6 +17,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@blog/markdown-parse": "workspace:^",
     "@seventhse/ahooks": "workspace:*",
     "@seventhse/ui": "workspace:*",
     "@seventhse/utils": "workspace:*",

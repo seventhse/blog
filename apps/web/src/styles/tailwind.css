@@ -18,3 +18,7 @@
     --border-color: #434343;
   }
 }
+
+.container-px{
+  @apply px-3 size-full mx-auto sm:px-12 md:px-24 lg:px-48;
+}

@@ -2,7 +2,12 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { cn } from '../utils'
+import { cn } from '@/utils'
+import type { IMenuItem } from '@/api/menus.ts'
+
+export interface MenuProps {
+  menus: IMenuItem[]
+}
 
 function isActive(href: string, pathname: string) {
   if (href === '/') {
@@ -16,10 +21,7 @@ function isActive(href: string, pathname: string) {
   return false
 }
 
-export function Menu({ menus }: { menus: Array<{
-  name: string
-  href: string
-}> }) {
+export function Menu({ menus }: MenuProps) {
   const pathname = usePathname()
 
   return (
