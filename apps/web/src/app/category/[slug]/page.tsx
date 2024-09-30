@@ -1,9 +1,9 @@
-import { getArticleCategory, getArticles, getArticlesByCategory } from '@/api/article.ts'
+import { getArticleCategory, getArticlesByCategory } from '@/api/article.ts'
 import { ArticleList } from '@/components/article-list.tsx'
 import { CategoryTab } from '@/components/category-tab.tsx'
 
 export async function generateStaticParams() {
-  return await getArticles()
+  return await getArticleCategory()
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {

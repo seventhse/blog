@@ -78,7 +78,7 @@ export async function getArticleCategory(): Promise<IArticleCategory[]> {
   ]
 }
 
-export async function getArticlesByCategory(category: string): Promise<IArticleItem[]> {
+export async function getArticlesByCategory(category: string = 'all'): Promise<IArticleItem[]> {
   const articles = await getArticles()
   if (category === 'all') {
     return articles
