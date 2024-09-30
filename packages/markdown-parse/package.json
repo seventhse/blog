@@ -1,19 +1,19 @@
 {
   "name": "@blog/markdown-parse",
+  "type": "module",
   "version": "0.0.1",
   "description": "markdown parse lib",
+  "author": "Seventhse <season.sevent@icloud.com> (https://github.com/seventhse)",
+  "license": "MIT",
+  "keywords": [
+    "markdown"
+  ],
   "main": "src/index.ts",
-  "type": "module",
+  "files": ["src"],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
-  "keywords": [
-    "markdown"
-  ],
-  "files": ["src"],
-  "author": "Seventhse <season.sevent@icloud.com> (https://github.com/seventhse)",
-  "license": "MIT",
   "dependencies": {
     "rehype-stringify": "^10.0.1",
     "remark-extract-frontmatter": "^3.2.0",
